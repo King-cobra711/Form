@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/form.css" />
+    <script src="javascript/form.js"></script>
+    <title>Web Form</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend><h3>THIS IS A FORM 18+</h3></legend>
+      <form action="" id="form" onsubmit="">
+        <label for="fname" aria-required="true">First Name: </label>
+        <input
+          autocomplete="off"
+          id="hi"
+          class="required"
+          type="text"
+          pattern="^[A-Z]{1}[A-Z a-z .'-']{1,}"
+          title="First Name must start with a capital letter and have at least 2 letters."
+          name="fname"
+          placeholder="First Name"
+        />
+        <div id="fname" class="small"></div>
+        <label for="lname" aria-required="true">Last Name: </label>
+        <input
+          autocomplete="chrome-off"
+          class="required"
+          type="text"
+          pattern="^[A-Z]{1}[A-Z a-z .'-']{1,}"
+          title="Last Name must start with a capital letter and have at least 2 letters."
+          name="lname"
+          placeholder="Last Name"
+        />
+        <div id="lname" class="small"></div>
+        <label for="address" aria-required="false">Address: </label>
+        <input
+          autocomplete="chrome-off"
+          type="text"
+          pattern="[0-9]{1,5}\s[A-Z a-z -]{1,30}\s[A-Z a-z]{1,30}$"
+          title="Start with house/unit number followed by street name then street type. Example (123 Evergreen Street"
+          name="address"
+        />
+        <div id="address" class="small"></div>
+        <label for="dob" aria-required="true">Date of birth: </label>
+        <input
+          autocomplete="chrome-off"
+          class="required"
+          id="dmy"
+          type="text"
+          min="1920-01-01"
+          max="2002-01-01"
+          title="Date must be between 01/01/1920 and 01/01/2002"
+          name="dob"
+          placeholder="Date of Birth  DD/MM/YYYY"
+          onblur="date()"
+          onfocus="(this.type='date')"
+        />
+        <div id="dob" class="small"></div>
+        <label for="email" aria-required="true">Email: </label>
+        <input
+          autocomplete="chrome-off"
+          class="required"
+          type="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
+          title="Email is allowed to have any letters from a-z, numbers from 0-9 and olny the period (.) underscore (_) percent (%) plus (+) and hyphen/minus (-) befor '@' then all of the above excluding underscore (_) percent (%) and plus (+) after '@' followed by period (.) and 2-4 letters from a-z e.g (.com)."
+          name="email"
+          placeholder="Email"
+        />
+        <div id="email" class="small"></div>
+        <label for="p1" aria-required="true">Password </label>
+        <input
+          autocomplete="chrome-off"
+          class="required"
+          id="pass1"
+          type="password"
+          name="p1"
+          onblur="checkPW()"
+          placeholder="Type Password"
+        />
+        <div id="p1" class="small"></div>
+        <label for="p2" aria-required="true">Confirm Password: </label>
+        <input
+          autocomplete="chrome-off"
+          class="required"
+          id="pass2"
+          type="password"
+          name="p2"
+          placeholder="Confirm Password"
+          onblur="checkPW()"
+          title="Passwords don't match."
+        />
+        <div id="pass" class="small"></div>
+        <input type="submit" id="submit" onclick="validateEntireForm()" />
+      </form>
+    </fieldset>
+  </body>
+</html>

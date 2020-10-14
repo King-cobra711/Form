@@ -1,0 +1,142 @@
+fieldset {
+  margin: auto;
+  max-width: 500px;
+  background-color: rgb(202, 230, 255);
+  /* height: 461.375px; */
+}
+form {
+  /* margin: auto; */
+  max-width: 500px;
+  /* text-align: center; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+  font-size: 1.5em;
+}
+div {
+  grid-column: 1 / 3;
+  border: rgb(255, 3, 3) 1px dotted;
+  padding: 3px;
+  margin-top: 1px;
+  color: red;
+  text-align: center;
+  background-color: white;
+  display: none;
+  /* visibility: hidden; */
+}
+.small {
+  font-size: 0.6em;
+  /* position: relative;
+  bottom: 20px; */
+  margin-top: -1em;
+}
+#fname::after {
+  content: "* Required field!  First Name must start with a capital letter and have at least 2 letters.";
+}
+#lname::after {
+  content: "* Required field!  Last Name must start with a capital letter and have at least 2 letters.";
+}
+#address::after {
+  content: "Start with house/unit number followed by street name then street type. Example (123 Evergreen Street).";
+}
+#dob::after {
+  content: "* Required field!  Date must be between 01/01/1920 and 01/01/2002";
+}
+#email::after {
+  content: "* Required field!  Email is allowed to have any letters from a-z, numbers from 0-9 and olny the period (.) underscore (_) percent (%) plus (+) and hyphen/minus (-) befor '@' then all of the above excluding underscore(_) percent (%) and plus (+) after '@' followed by period (.) and 2-4 letters from a-z e.g (.com).";
+}
+input:nth-of-type(1):invalid:not(:focus) ~ div:nth-of-type(1) {
+  display: block;
+}
+input:nth-of-type(1) ~ div:nth-of-type(1) {
+  display: none;
+}
+input:nth-of-type(2):invalid:not(:focus) ~ div:nth-of-type(2) {
+  display: block;
+}
+input:nth-of-type(2) ~ div:nth-of-type(2) {
+  display: none;
+}
+input:nth-of-type(3):invalid:not(:focus) ~ div:nth-of-type(3) {
+  display: block;
+}
+input:nth-of-type(3) ~ div:nth-last-of-type(3) {
+  display: none;
+}
+input:nth-of-type(4):invalid:not(:focus) ~ div:nth-last-of-type(4) {
+  display: block;
+}
+input:nth-of-type(4) ~ div:nth-last-of-type(4) {
+  display: none;
+}
+input:nth-of-type(5):invalid:not(:focus) ~ div:nth-of-type(5) {
+  display: block;
+}
+input:nth-of-type(5) ~ div:nth-of-type(5) {
+  display: none;
+}
+input:nth-of-type(6):invalid:not(:focus) ~ div:nth-of-type(6) {
+  display: block;
+}
+input:nth-of-type(6) ~ div:nth-of-type(6) {
+  display: none;
+}
+input:nth-of-type(7):invalid:not(:focus) ~ div:nth-of-type(7) {
+  display: block;
+}
+input:nth-of-type(7) ~ div:nth-of-type(7) {
+  display: none;
+}
+
+input[type="submit"] {
+  grid-column: 2/3;
+  height: 35px;
+  background-color: rgb(255, 255, 255);
+  border: rgb(70, 171, 253) 3px solid;
+  color: rgba(0, 0, 0, 0.603);
+}
+input[type="submit"]:hover {
+  border-color: rgb(40, 97, 255);
+  position: relative;
+  color: black;
+}
+label {
+  position: relative;
+  left: 1em;
+}
+input {
+  position: relative;
+  right: 1em;
+  border: 0;
+  border-radius: 5em;
+  text-align: center;
+}
+input::placeholder {
+  color: transparent;
+}
+
+[aria-required="true"]::before {
+  content: "* ";
+  color: red;
+}
+[aria-required="false"]::before {
+  content: "* ";
+  color: rgba(0, 0, 0, 0);
+}
+@media screen and (max-width: 500px) {
+  label {
+    display: none;
+  }
+  input {
+    grid-column: 1/3;
+    height: 2.6em;
+    left: 0;
+  }
+  input[name="address"] {
+    display: none;
+  }
+  input::placeholder {
+    color: rgb(156, 154, 154);
+    text-align: center;
+  }
+}
